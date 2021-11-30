@@ -1,0 +1,26 @@
+.leoFCE_geschaeftsfuehrer {
+    &_img {
+        overflow: hidden;
+        width: 88%;
+        margin-left: 20px;
+        margin-bottom: 1rem;
+        border-radius: 0 2rem;
+        transform: skew(-12deg);
+        
+        img { transform: skew(12deg) scale(1.15) }
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .leoFCE_geschaeftsfuehrer {
+        &_img {
+            margin-left: 20px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div class="grid-container grid mod_topbbar<?php if (strlen($this->class) !== 0): ?> <?php echo $this->class; ?><?php endif ?>" <?php echo $this->cssID; ?>>
+    <div class="col-c12 flex-container">
+        <img src="files/leonhardt/private/media/img/leonhardt-logo.svg" alt="Leonhardt KFZ Logo" class="leoLogo">
+
+        <div class="flex-container">
+            
+            <div class="openings font--small">
+                <?php echo $this->opening; ?>
+            </div>
+
+            <div class="buttons">
+                <a href="<?php echo $this->whatsappno; ?>" class="btn btn--primary--white btn--icon btn--whatsapp"><?php echo $this->whatsapptext; ?></a>
+                
+                <a href="<?php echo $this->serviceno; ?>" class="btn btn--primary--white btn--icon btn--phone"><?php echo $this->servicetext; ?></a>
+            </div>
+    
+    
+        </div>
+    </div>
+
+</div>

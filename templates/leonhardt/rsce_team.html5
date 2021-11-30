@@ -1,0 +1,36 @@
+<section class="leoFCE leoFCE_team<?php if (strlen($this->class) !== 0): ?> <?php echo $this->class; ?><?php endif ?>" <?php echo $this->cssID; ?>>
+
+    <?php if ($this->headline): ?>
+        <div class="col-c6-headline">
+            <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+        </div>
+    <?php endif; ?> 
+
+    <div class="grid-container grid">
+        <div class="col-c12-swiper">
+            <div class="swiper-container swiper-team">
+                <div class="swiper-wrapper">
+                    <?php foreach ($this->slides as $slide): ?>
+                        <div class="swiper-slide">
+                            <!-- <div class="col-c4"> -->
+                                <div class="leoFCE_team_img">
+                                    <?php if ($image = $this->arrData['getImageObject']($slide->image, $slide->size)): ?>
+                                        <?php $this->insert('picture_default', $image->picture) ?>
+                                        <?php endif ?>
+                                    </div>
+                                <?php echo $slide->slideContent ?>
+                            <!-- </div> -->
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination pag-team"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev btn-prev-team"></div>
+                <div class="swiper-button-next btn-next-team"></div>
+            </div>
+        </div>
+
+    </div>
+</section>

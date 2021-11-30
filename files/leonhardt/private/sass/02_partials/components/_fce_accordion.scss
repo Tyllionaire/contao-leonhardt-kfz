@@ -1,0 +1,96 @@
+.fazFCE__accordion {
+
+    &__trigger {
+
+        margin: 0;
+        padding: 0.5rem 0 0 0;
+        border-top: 1px solid $color-blue;
+        
+        button {
+            padding: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: block;
+            width: 100%;
+            font-family: $font-suisse;
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+    }
+    
+    &__wrapper {
+        &:last-of-type {
+            .fazFCE__accordion__panel {
+                border-bottom: 1px solid $color-blue;
+                padding-bottom: 0.5rem;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: block;
+        padding-right: 1.25em;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0.5em;
+        right: 0;
+        width: 16px;
+        height: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.026' height='9.954'%3E%3Cpath data-name='Pfad 410' d='M15.285.693l-7.075 7.8L.721.693' fill='none' stroke='%23110a35' stroke-width='2'/%3E%3C/svg%3E");
+        transition: transform .2s ease-in-out;
+
+        &.is-open {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__panel {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1rem 0 1rem;
+        margin: 0 0 0.5rem 0;
+        transition: all 0.4s ease-in-out;
+
+        & *:first-of-type {
+            padding-top: 0.5rem;
+        }
+
+        & *:last-of-type {
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &.bgColor--blue-dark {
+
+        .fazFCE__accordion {
+
+            &__trigger { border-bottom: 1px solid $color-white }
+
+            &__icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.026' height='9.954'%3E%3Cpath data-name='Pfad 410' d='M15.285.693l-7.075 7.8L.721.693' fill='none' stroke='%23FFFFFF' stroke-width='2'/%3E%3C/svg%3E");
+            }
+        }
+
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .fazFCE__accordion {
+        &__trigger {
+            button {
+                font-size: 1.15rem;
+            }
+        }
+    }
+}

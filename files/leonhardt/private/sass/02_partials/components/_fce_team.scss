@@ -1,0 +1,38 @@
+.leoFCE_team {
+    // .swiper-slide {
+    //     height: auto;
+    //     display: flex;
+    //     flex-flow: column nowrap;
+
+    //     p:last-of-type {
+    //         margin-top: auto;
+    //     }
+    // }
+
+    &_img {
+        overflow: hidden;
+        width: 83%;
+        margin-left: 10px;
+        margin-bottom: 1rem;
+        border-radius: 0 2rem;
+        transform: skew(-12deg);
+        
+        img { transform: skew(12deg) scale(1.15); }
+    }
+
+    .btn {
+        max-width: 200px;
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .leoFCE_team {
+        // .btn { width: auto }
+    }
+}

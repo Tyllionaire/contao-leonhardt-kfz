@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../Volumes/Nifty Drive/FAZ/gulp-tool"
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.autoprefix": [],
+		"liveSassCompile.settings.excludeList": [
+			"**/node_modules/**",
+			".vscode/**",
+			"**/assets/**",
+			"**/config/**",
+			"**/contao-manager/**",
+			"**/system/**",
+			"**/var/**",
+			"**/vendor/**",
+			"**/web/**"
+		]
+	}
+}

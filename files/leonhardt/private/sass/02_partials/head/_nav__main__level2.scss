@@ -1,0 +1,67 @@
+nav.main ul.level_2 {
+    position: absolute;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0 0 -1.5rem;
+    background: $color-white;
+    font-weight: 100;
+
+    &[x-show="submenuOpen"] {
+        display: none;
+        max-height: auto !important;
+    }
+
+    &.submenu--open {
+        display: block;
+    }
+
+    //&::after,
+    .white-background {
+        position: absolute;
+        width: 10000%;
+        content: '';
+        height: 10000%;
+        top: 0;
+        left: -5000%;
+        background-color: rgba(255,255,255,0.65);
+        @include z-index(minus);
+        display: block;
+    }
+    
+    li {
+        display: block;
+        margin: 0 0 0.5rem 0;
+
+        &.submenu {
+
+            // &.trail,
+            &.thirdmenu-item--opened {
+                background-color: #e8edee;
+                margin: 0 -1.5rem 0.5rem -1.5rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        strong {
+            font-weight: 100;
+        }
+    }
+
+    // transition: all 0.2s ease-in-out;
+
+    // &.enter-start,
+    // &.leaving-end {
+    //     opacity: 0;
+    // }
+    // &.enter-end,
+    // &.leaving-start {
+    //     opacity: 1;
+    // }
+}
+
+@include media("<desktop") {
+    &[x-show="submenuOpen"] {
+        display: block !important;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,19 @@
+// Hide elements but make them accessible for the screen rader
+.invisible {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.bgColor {
+    &--transparent { background-color: transparent; }
+    &--blue { background-color: $color-blue-light; }
+    &--blue-dark {
+        background-color: $color-blue;
+        color: $color-white;
+    }
+}
+
+.clear {
+    @include clearfix;
+}

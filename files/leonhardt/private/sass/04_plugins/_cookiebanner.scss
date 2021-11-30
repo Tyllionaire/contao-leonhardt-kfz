@@ -1,0 +1,137 @@
+.contao-cookiebar,
+.contao-cookiebar * {
+  font-family: $font-suisse;
+  color: $color-blue;
+}
+
+#faz-cookiebanner {
+
+  &.cc-bottom {
+    &.cc-active .cc-inner {
+      animation: faz-cookiebar-top-in 0.2s ease-in-out forwards;
+    }
+    &.cc-saved .cc-inner {
+      animation: faz-cookiebar-top-out 0.2s ease-in-out forwards;
+    }
+  }
+
+  p {
+    color: $color-blue;
+  }
+
+
+  input + label {
+    &::before {
+      border-color: $color-blue;
+    }
+    &::after {
+      background-color: $color-blue;
+    }
+  }
+  input:checked + label {
+    &::before {
+      // border-color: #4b883f;
+      // background-color: #9ECF98;
+      background-color: $color-blue-transparent;
+    }
+    &::after {
+      // background-color: #4b883f;
+    }
+  }
+  input:disabled + label {
+    &::before {
+      border-color: $color-blue-transparent;
+      background-color: $color-white;
+    }
+    &::after {
+      background-color: $color-blue-transparent;
+    }
+  }
+
+
+  .cc-inner {
+    border-radius: 0;
+  }
+
+
+  .cc-btn {
+    //@extend .btn;
+    //@extend .btn--secondary;
+  
+    &.success {
+      //@extend .btn--primary;
+      color: $color-white;
+
+      &::after {
+        border-color: $color-white;
+      }
+    }
+
+
+    & + .cc-btn {
+      margin-left: 1rem;
+      margin-top: 0;
+      
+      @include media("<tablet") {
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .cc-groups {
+    .cc-group {
+      border: 1px solid $color-grey;
+      border-radius: 0;
+    }
+  }
+  
+  .cc-cookies {
+    background-color: $color-white;
+    
+    & > p,
+    & > .cc-cookie {
+      border-top: 1px solid $color-grey;
+    }
+    
+    .cc-cookie-info {
+      border: 1px solid $color-grey;
+      border-radius: 0;
+      background-color: $color-grey;
+    }
+  }
+}
+
+@keyframes faz-cookiebar-top-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes faz-cookiebar-top-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+  }
+}
+
+@include media("<tablet") {
+  #faz-cookiebanner {
+    padding: 0;
+
+    .contao-cookiebar.cc-bottom .cc-inner {
+        height: 85vh;
+    }
+  }
+}

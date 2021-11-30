@@ -1,0 +1,88 @@
+.vjs-theme-sea {
+    * { outline: none; }
+    .vjs-big-play-button {
+      width: 79px;
+      height: 79px;
+      -o-object-fit: contain;
+      object-fit: contain;
+      background-color: $color-blue;
+      color: $color-blue-light;
+      border: 6px solid $color-blue;
+      font-size: 3rem;
+      line-height: calc(79px - 0.75rem);
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      margin: -51.5px auto 0 -39.5px;
+
+      &:hover {
+          background-color: $color-blue;
+          color: $color-blue-light;
+      }
+    }
+  
+    .vjs-control-bar {
+      height: 4em;
+      background-color: $color-blue-light;
+      opacity: 0.8;
+    }
+  
+    .vjs-button {
+        color: $color-blue;
+        background: $color-white;
+
+      &:hover {
+        color: $color-blue;
+        background: $color-white;
+      }
+  
+      > .vjs-icon-placeholder:before {
+        line-height: 2.2;
+      }
+    }
+  
+    .vjs-time-control {
+      line-height: 4em;
+      color: $color-blue;
+      background: $color-white;
+    }
+  
+    .vjs-picture-in-picture-control, .vjs-volume-panel {
+      display: none;
+    }
+    .vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+      background: white;
+    }
+    .vjs-progress-control {
+      .vjs-play-progress {
+        background-color: $color-blue;
+  
+        &:before {
+          display: none;
+        }
+      }
+  
+      .vjs-slider {
+        background-color: $color-blue-light;
+      }
+  
+      .vjs-load-progress div {
+        background: hsla(0, 0%, 100%, 0.5);
+      }
+  
+      .vjs-progress-holder {
+        margin: 0;
+        height: 100%;
+      }
+  
+      .vjs-time-tooltip {
+        background-color: transparent;
+        color: $color-blue;
+      }
+  
+      .vjs-mouse-display .vjs-time-tooltip {
+        background-color: transparent;
+        color: $color-blue;
+      }
+    }
+  }

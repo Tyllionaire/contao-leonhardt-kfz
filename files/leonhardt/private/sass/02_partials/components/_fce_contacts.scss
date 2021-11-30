@@ -1,0 +1,33 @@
+.fazFCE__contacts {
+    font-family: $font-suisse;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item + &__item {
+        margin: 0 0 0 1rem;
+    }
+
+    p + p {
+        margin-top: 0.5rem;
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .fazFCE__contacts {
+    
+        &__wrapper {
+            display: block;
+        }
+        &__item + &__item  {
+            margin: 3rem 0 0 0;
+        }
+    }
+}

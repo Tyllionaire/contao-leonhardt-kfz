@@ -1,0 +1,58 @@
+.fazFCE__downloads {
+
+    &__download {
+        display: flex;
+        border-bottom: 2px solid $color-blue-transparent;
+        padding-bottom: $spacer/6;
+        margin-bottom: $spacer/2;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__download__img {
+        width: 180px;
+        margin: 0 $spacer/4 0 0;
+    }
+    &__download__meta {
+    }
+    
+    &__download__meta__filename {
+        display: block;
+        word-break: break-all;
+        line-height: 1.2;
+    }
+    &__download__meta__filesize {
+        display: block;
+        opacity: .6;
+    }
+    &__download__meta__btn {
+        position: absolute;
+        bottom: $spacer/6;
+    }
+}
+
+@include media("<phone-ls") {
+    .fazFCE__downloads {
+        
+        &__download {
+            display: block;
+        }
+        
+        &__download__img {
+            width: 180px;
+        }
+        
+        &__download__meta__filename {
+            margin-top: $spacer/6;
+        }
+        &__download__meta__filesize {
+            margin: 0 0 $spacer/4 0;
+            font-size: 0.825rem;
+        }
+        &__download__meta__btn {
+            position: relative;
+        }
+    }
+}

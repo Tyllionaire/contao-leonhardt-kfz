@@ -1,0 +1,131 @@
+.leoFCE_intro {
+
+    &.leoFCE {
+        padding: 4rem 0 5.75rem 0;
+    }
+
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: calc(100vh - 67px);
+    height: calc(var(--vh, 1vh) * 100 - 67px);
+    transition: height .2s linear;
+    -webkit-transition: height .2s linear;
+    
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    &__video-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        right: -10%;
+        margin-bottom: 1rem;
+        border-radius: 0 0 0 10vw;
+        transform: skew(-12deg);
+    }
+    &__hero-video {
+        position: absolute;
+        height: auto;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) skew(12deg) scale(1.15);
+    }
+
+    &__action {
+        position: absolute;
+        width: 100%;
+        bottom: 20%;
+        left: 15%;
+    }
+    &__action-content {
+        position: relative;
+        display: inline-block;
+        background-color: $color-grey;
+        padding: 1rem 0.5rem;
+        font-style: italic;
+    
+        &::before {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            height: 100%;
+            width: 30px;
+            top: 0;
+            left: -15px;
+            border-radius: 0 0 0 1rem;
+            transform: skew(-12deg);
+            background-color: $color-grey;
+        }
+        
+        &::after {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            height: 100%;
+            width: 30px;
+            top: 0;
+            right: -15px;
+            border-radius: 0 1rem 0 0;
+            transform: skew(-12deg);
+            background-color: $color-grey;
+        }
+    }
+
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("portrait") {
+    .leoFCE_intro {
+        height: calc(60vh - 67px);
+        height: calc(var(--vh, 1vh) * 60 - 67px);
+
+        &__hero-video {
+            // height: 100%;
+            // width: auto;
+        }
+    }
+}
+
+@include media("<phone-ls") {
+    .leoFCE_intro {
+
+        height: auto;
+
+        &.leoFCE {
+            padding-bottom: 0;
+            padding-top: 7rem;
+        }
+
+        &__hero-video {
+            position: relative;
+            height: auto;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: translateX(0) translateY(0) skew(12deg) scale(1.15);
+        }
+        &__action {
+            position: relative;
+            width: 80%;
+            left: 0;
+            bottom: auto;
+            margin-top: -3rem;
+        }
+        &__action-content {
+            padding: 0.5rem 0.5rem;
+            margin-left: 15px;
+
+            background-color: $color-white;
+
+            &::before,
+            &::after { background-color: $color-white }
+        }
+    
+    }
+}

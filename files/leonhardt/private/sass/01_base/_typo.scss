@@ -1,0 +1,189 @@
+body {
+    font: 17px/1.78 $font-inter;
+    font-weight: 400;
+    color: $color-black;
+    text-rendering: optimizeLegibility;
+    background-color: $color-grey;
+
+    @include media("<=tablet") { font: 16px/1.6 $font-inter; }
+}
+
+
+// Helpers
+.color {
+    &--white { color: $color-white }
+    &--dark  { color: $color-blue }
+}
+.textshadow {
+    &--light { text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); }
+}
+.footnote {
+    position: relative;
+    font-family: $font-inter;
+    margin: 1rem 0 0 0;
+    padding: 1rem 0 0 1.5rem;
+    line-height: 1.4;
+
+    &::before {
+        position: absolute;
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15.343' height='8.517' viewBox='0 0 15.343 8.517'%3E%3Cg transform='translate(-79.633 -159.293)'%3E%3Cline id='Linie_17' data-name='Linie 17' x1='13.072' transform='translate(80.133 163.552)' fill='none' stroke='%23110a35' stroke-linecap='square' stroke-linejoin='round' stroke-width='1'/%3E%3Cpath id='Pfad_255' data-name='Pfad 255' d='M530,167.1l1.48-1.48,2.072-2.072L530,160' transform='translate(-439.282)' fill='none' stroke='%23110a35' stroke-linecap='square' stroke-miterlimit='10' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+        margin: 0 0.5rem 0 -1.5rem;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        top: 0;
+        left: 0;
+        border-top: 1px solid $color-blue-light;
+        border-bottom: 1px solid $color-white;
+    }
+}
+.font {
+    &--suisse {
+        font-family: $font-inter;
+    }
+    &--small {
+        font-size: 0.825rem;
+    }
+}
+
+figcaption,
+.figcaption {
+    font-family: $font-inter;
+    font-size: 0.824rem;
+    margin-top: 0.25rem;
+}
+
+code {
+    font-family: monospace;
+    padding: 0.5rem 1rem;
+    display: block;
+    background: $color-grey;
+}
+
+// Headlines
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: $color-main;
+    margin-bottom: 0.5em;
+
+    .subline {
+        display: block;
+        font-size: 0.9em;
+        font-family: $font-inter;
+        font-weight: 200;
+    }
+}
+
+h1 {
+    font-size: 4.667rem;
+    line-height: 1.14;
+    @include media("<=tablet") { font-size: 2.5rem }
+}
+h2 {
+    font-size: 2.444rem;
+    line-height: 1.32;
+    @include media("<=tablet") { font-size: 1.75rem }
+}
+h3 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+    @include media("<=tablet") { font-size: 1.5rem }
+}
+h4 {
+    font-size: 1.556rem;
+    line-height: 1.5;
+    @include media("<=tablet") { font-size: 1.333rem }
+}
+h5 {
+    font-size: 1.222rem;
+    line-height: 1.55;
+    @include media("<=tablet") { font-size: 1.111rem }
+}
+
+.col-c6-headline > h1,
+.col-c6-headline > h2,
+.col-c6-headline > h3,
+.col-c6-headline > h4,
+.col-c6-headline > h5 {
+    position: relative;
+    text-align: right;
+    color: $color-main;
+    background-color: $color-white;
+    padding: 0.25em 0.5em 0.25em 0.25em;
+    font-style: italic;
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 30px;
+        top: 0;
+        right: -20px;
+        border-radius: 0 0.5em 0 0;
+        transform: skew(-12deg);
+        background-color: $color-white;
+    }
+}
+
+strong { font-weight: 700 }
+
+a, button {
+    position: relative;
+    color: inherit;
+    cursor: pointer;
+}
+
+// List Styles
+ul, ol { padding-left: 1.25em; margin-bottom: 1rem }
+ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 10px;
+}
+ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+
+    li::marker { font-weight: 700 }
+}
+
+// Special orders
+p + ul,
+p + ol,
+ul + p,
+ol + p,
+p + p { margin-top: 1.25rem }
+
+p + ul { margin-top: 0 }
+
+p + h4 { margin-top: 0.75rem }
+
+// Deal with looong words
+h1, h2, h3, h4, h5, p, a {
+    // https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+mark,
+.highlight {
+    background-color: $color-red;
+    color: $color-white;
+    padding: 0 0.5em;
+}

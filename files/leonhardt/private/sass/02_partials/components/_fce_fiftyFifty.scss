@@ -1,0 +1,55 @@
+.fazFCE__fiftyFifty {
+    overflow: hidden;
+
+    .col-c6.centered {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+    .video-js {
+        height: 100%;
+        width: auto;
+    }
+    @supports (object-fit: cover) {
+        img,
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        } 
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .fazFCE__fiftyFifty {
+        overflow: hidden;
+    
+        img {
+            height: auto;
+            width: 100%;
+        }
+        .video-js {
+            height: auto;
+            width: 100%;
+        }
+        @supports (object-fit: cover) {
+            img,
+            video {
+                height: 100%;
+                width: 100%;
+                object-fit: inherit;
+            } 
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.link {
+    &__icon {
+        display: inline-block;
+        margin-left: 34px;
+
+        &::before {
+            position: absolute;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            top: 2px;
+            left: -34px;
+        }
+        
+        &--mail {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cdefs/%3E%3Cg data-name='Gruppe 3'%3E%3Cpath fill='none' d='M0 0h28v28H0z' data-name='Rechteck 1'/%3E%3Cg fill='none' stroke='%23110a35' stroke-miterlimit='10' stroke-width='1.8' data-name='Gruppe 640'%3E%3Cpath d='M3 6h22v16.077H3z' data-name='Rechteck 261'/%3E%3Cpath d='M23.452 6.244l-9.465 7.429-9.464-7.429' data-name='Pfad 392'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+        
+        &--phone {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg transform='translate(-675 -206)'%3E%3Cpath d='M89.639,97.018l3.689-3.689,5.712.952v4.76C80,99.041,80,80,80,80h4.76l.952,5.712-3.785,2.839' transform='translate(599.48 130.518)' fill='none' stroke='%23110a35' stroke-miterlimit='10' stroke-width='1.8'/%3E%3Crect id='Rechteck_1' data-name='Rechteck 1' width='28' height='28' transform='translate(675 206)' fill='none'/%3E%3C/g%3E%3C/svg%3E%0A");;
+            }
+        }
+    }
+
+    &__icon + br + &__icon,
+    &__icon + br + &__icon { margin-top: 0.5em }
+
+    &__no-textdecoration {
+        text-decoration: none;
+    }
+}

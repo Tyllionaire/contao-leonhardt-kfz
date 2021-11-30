@@ -1,0 +1,35 @@
+nav.main-mobile ul.level_3 {
+    font-weight: 100;
+    padding: 0.5rem 1rem 1rem 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0 0 2px 2px;
+    
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+
+    &.closed {
+        padding: 0;
+    }
+
+    &.level_3 {
+        
+        h4 {
+            display: none;
+        }
+        
+        .first {
+            margin-top: 0; 
+        }
+        
+        strong {
+            font-weight: 100;
+        }
+        
+    }
+
+    li {
+        padding: 0.25rem 0;
+        border-bottom: none;
+    }
+}

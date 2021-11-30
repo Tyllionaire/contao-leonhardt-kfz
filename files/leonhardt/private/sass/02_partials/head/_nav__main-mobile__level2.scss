@@ -1,0 +1,38 @@
+nav.main-mobile ul.level_2 {
+    font-weight: 100;
+
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+
+    &.level_2 {
+        .first {
+            margin-top: 1rem; 
+        }
+
+        strong {
+            font-weight: 100;
+        }
+
+        // if level 3 is opened
+        .thirdmenu {
+            transition: all .4s ease-in-out;
+            
+            &--open {
+                display: block;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.4);
+                border-radius: 2px 2px 0 0;
+                transition: all .4s ease-in-out;
+            }
+            &--closed {
+                transition: all .4s ease-in-out;
+            }
+        }
+    }
+
+    li {
+        padding: 0.25rem 0;
+        border-bottom: none;
+    }
+}

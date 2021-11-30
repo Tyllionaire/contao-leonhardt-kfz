@@ -1,0 +1,59 @@
+.pagination {
+    position: relative;
+    margin: $spacer/2 0 0 0;
+    width: 100%;
+    font-family: $font-suisse;
+    line-height: 225%;
+
+    ul {
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            margin: 0 0 0 1rem;
+
+            & > * {
+                padding: 0.5rem 1rem;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .active {
+            background-color: $color-blue;
+            color: $color-grey;
+        }
+
+        .link:hover {
+            color: $color-red;
+        }
+
+        .previous,
+        .next {
+            margin: 0;
+
+            & + li {
+                margin: 0;
+            }
+        }
+
+        .previous:hover,
+        .next:hover {
+            color: $color-red;
+        }
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+}

@@ -1,0 +1,19 @@
+<section class="leoFCE leoFCE_intro">
+
+    <?php if ($media = $this->getImageObject($this->media)): ?>
+        <div class="leoFCE_intro__video-wrapper">
+            <video class="leoFCE_intro__hero-video" autoplay muted loop>
+                <source type="video/mp4" src="<?php echo $this->getImageObject($this->media)->src ?>">
+            </video>
+        </div>
+    <?php endif ?>
+
+    <div class="grid-container leoFCE_intro__action<?php if (strlen($this->class) !== 0): ?> <?php echo $this->class; ?><?php endif ?>" <?php echo $this->cssID; ?>>
+        <div class="leoFCE_intro__action-content">
+            <?php echo $this->action; ?>
+        </div>
+    </div>
+
+    {{insert_module::4}}
+
+</section>

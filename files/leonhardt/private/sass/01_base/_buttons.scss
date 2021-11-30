@@ -1,0 +1,117 @@
+.btn {
+    position: relative;
+    overflow: hidden;
+
+    font-size: 0.889rem;
+    font-weight: 700;
+    line-height: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.16px;
+    color: $color-white;
+    
+    display: inline-block;
+    margin: 0;
+    padding: 0.75em 1.25em 0.75em 2.5em;
+    border-radius: 2px;
+    outline: none;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+    
+    @include media("<phone-ls") {
+        width: 100%;
+        font-size: 0.925em;
+        text-align: center;
+        // padding: 1.25em 2.5em;
+    }
+
+    // Icons
+    &--icon {
+        &::before {
+            position: absolute;
+            margin-left: -1.5rem;
+            margin-top: -0.25rem;
+        }
+    }
+    &--whatsapp {
+        &::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath id='Icon_simple-whatsapp' data-name='Icon simple-whatsapp' d='M14.582,11.985c-.251-.125-1.472-.723-1.7-.8s-.394-.125-.561.125-.642.8-.787.968-.291.175-.538.063a6.763,6.763,0,0,1-2-1.238A7.56,7.56,0,0,1,7.61,9.373c-.145-.25-.016-.388.108-.512s.251-.288.376-.436a2.112,2.112,0,0,0,.248-.413.458.458,0,0,0-.021-.437c-.063-.125-.56-1.35-.768-1.838s-.406-.425-.56-.425S6.683,5.3,6.517,5.3a.939.939,0,0,0-.664.3,2.782,2.782,0,0,0-.871,2.063A4.876,4.876,0,0,0,6,10.223a11.112,11.112,0,0,0,4.25,3.738c.595.25,1.058.4,1.42.524a3.448,3.448,0,0,0,1.567.1,2.565,2.565,0,0,0,1.68-1.188,2.063,2.063,0,0,0,.15-1.187c-.062-.113-.225-.175-.475-.288m-4.538,6.2h-.013a8.336,8.336,0,0,1-4.213-1.15l-.3-.178L2.4,17.609l.838-3.037-.2-.312a8.265,8.265,0,0,1,12.873-10.2,8.157,8.157,0,0,1,2.424,5.825,8.275,8.275,0,0,1-8.279,8.238M17.1,2.874A10.118,10.118,0,0,0,10.038,0,9.908,9.908,0,0,0,1.413,14.865L0,20l5.279-1.377a10.052,10.052,0,0,0,4.758,1.206h.005A9.95,9.95,0,0,0,20,9.916a9.829,9.829,0,0,0-2.912-7.009' fill='%235F4B8B'/%3E%3C/svg%3E%0A");
+        }
+    }
+    &--phone {
+        &::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath data-name='Icon metro-phone' d='M14.666 12c-1.333 1.333-1.333 2.667-2.667 2.667s-2.667-1.333-4-2.667-2.667-2.667-2.667-4 1.333-1.333 2.667-2.667S5.332 0 3.999 0s-4 4-4 4c0 2.667 2.74 8.073 5.333 10.667S13.332 20 15.999 20c0 0 4-2.667 4-4s-4-5.333-5.333-4z' fill='%235F4B8B'/%3E%3C/svg%3E");
+        }
+    }
+
+
+    // Animate arrow on :hover
+    &:hover {
+        color: $color-main;
+    }
+
+    // Primary Style
+    &--primary {
+        border: 1px solid $color-main;
+        background-color: $color-main;
+
+        &:hover {
+            background-color: $color-main;
+            border-color: $color-main;
+        }
+    }
+
+    // Secondary Style
+    &--secondary {
+        border: 2px solid $color-main;
+        color: $color-main;
+        background-color: transparent;
+
+        &[href*="tel"] {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath data-name='Icon metro-phone' d='M14.666 12c-1.333 1.333-1.333 2.667-2.667 2.667s-2.667-1.333-4-2.667-2.667-2.667-2.667-4 1.333-1.333 2.667-2.667S5.332 0 3.999 0s-4 4-4 4c0 2.667 2.74 8.073 5.333 10.667S13.332 20 15.999 20c0 0 4-2.667 4-4s-4-5.333-5.333-4z' fill='%235F4B8B'/%3E%3C/svg%3E");
+                position: absolute;
+                margin-left: -1.5rem;
+                margin-top: -0.25rem;
+            }
+        }
+
+        &[href*="mailto"] {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.785' height='18' viewBox='0 0 22.785 18'%3E%3Cg id='Icon_feather-mail' data-name='Icon feather-mail' transform='translate(-1.607 -5)'%3E%3Cpath id='Pfad_32' data-name='Pfad 32' d='M5,6H21a2.006,2.006,0,0,1,2,2V20a2.006,2.006,0,0,1-2,2H5a2.006,2.006,0,0,1-2-2V8A2.006,2.006,0,0,1,5,6Z' transform='translate(0 0)' fill='none' stroke='%235F4B8B' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath id='Pfad_33' data-name='Pfad 33' d='M23,9,13,16,3,9' transform='translate(0 -1)' fill='none' stroke='%235F4B8B' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E%0A");
+                position: absolute;
+                margin-left: -1.75rem;
+                margin-top: -0.15rem;
+            }
+        }
+        
+        &:hover {
+            background-color: $color-main;
+            color: $color-white;
+            &[href*="tel"] {
+                &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath data-name='Icon metro-phone' d='M14.666 12c-1.333 1.333-1.333 2.667-2.667 2.667s-2.667-1.333-4-2.667-2.667-2.667-2.667-4 1.333-1.333 2.667-2.667S5.332 0 3.999 0s-4 4-4 4c0 2.667 2.74 8.073 5.333 10.667S13.332 20 15.999 20c0 0 4-2.667 4-4s-4-5.333-5.333-4z' fill='%23FFF'/%3E%3C/svg%3E");
+                }
+            }
+            &[href*="mailto"] {
+                &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.785' height='18' viewBox='0 0 22.785 18'%3E%3Cg id='Icon_feather-mail' data-name='Icon feather-mail' transform='translate(-1.607 -5)'%3E%3Cpath id='Pfad_32' data-name='Pfad 32' d='M5,6H21a2.006,2.006,0,0,1,2,2V20a2.006,2.006,0,0,1-2,2H5a2.006,2.006,0,0,1-2-2V8A2.006,2.006,0,0,1,5,6Z' transform='translate(0 0)' fill='none' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath id='Pfad_33' data-name='Pfad 33' d='M23,9,13,16,3,9' transform='translate(0 -1)' fill='none' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+            }
+        }
+    }
+
+    &--primary--white {
+        border: 1px solid $color-white;
+        background-color: $color-white;
+        color: $color-main;
+    }
+
+}

@@ -1,0 +1,17 @@
+.search__header {
+    margin: 2rem 0 1rem 0
+}
+
+.search__result {
+    background-color: $color-white;
+    padding: 1rem 2rem;
+
+    & + .search__result {
+        margin-top: 1rem;
+    }
+
+    &__headline a {
+        text-decoration: none;
+    }
+
+}

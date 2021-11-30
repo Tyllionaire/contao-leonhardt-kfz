@@ -1,0 +1,72 @@
+.intro {
+    position: relative;
+    padding: 0 3.625rem 3.625rem 3.625rem;
+    width: 100%;
+    height: calc(85vh - 58px);
+    min-height: 600px;
+    @include z-index(intro);
+
+    &__inner {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+
+        div { height: 100% }
+
+        h1, h2, h3 {
+            position: absolute;
+            bottom: 8vh;
+            font-size: 6rem;
+        }
+    }
+}
+
+@include media("<desktop-xl") {
+    .intro {
+        &__inner {
+            h1, h2, h3 { font-size: 8vw; }
+        }
+    }
+}
+
+@include media("<desktop") {
+    .intro {
+        height: calc(85vh - 50px);
+        min-height: 600px;
+        
+        h1, h2, h3 { bottom: 0.5rem }
+        
+        &--hasSubNav {
+            height: calc(85vh + 58px);
+            min-height: 600px;
+            h1, h2, h3 { bottom: calc(0.5rem + 58px) }
+        }
+    }
+}
+
+@include media("<desktop", "portrait") {
+    .intro {
+        height: calc(70vh - 50px);
+        min-height: 600px;
+    }
+}
+
+@include media("<phone-ls") {
+    .intro {
+        height: calc(40vh - 50px);
+        min-height: auto;
+        padding: 0;
+        
+        &--hasSubNav {
+            height: calc(40vh + 58px);
+        }
+
+
+        &__inner {
+            h1, h2, h3 { font-size: 2.644rem; }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div id="kontakt" class="grid-container grid mod_footer<?php if (strlen($this->class) !== 0): ?> <?php echo $this->class; ?><?php endif ?>" <?php echo $this->cssID; ?>>
+    <div class="col-c12">
+
+        <img src="files/leonhardt/private/media/img/leonhardt-logo.svg" alt="Leonhardt KFZ Logo" class="leoLogo">
+        
+        <div class="contact font--small">
+            <h3>Kontakt</h3>
+            <?php echo $this->contact; ?>
+        </div>
+
+        <div class="font--small">
+            <h3>Öffnungszeiten</h3>
+            <div class="openings">
+                <?php echo $this->opening; ?>
+            </div>
+            <div class="privacy">
+                <h3>Links</h3>
+                <p>
+                    <a href="http://213.61.98.35/LeonhardtOnline/Login.asp" target="_blank" title="B2B-Shop">Zum B2B-Shop</a>
+                </p>
+            </div>
+            <div class="social">
+                <a href="https://de-de.facebook.com/pages/category/Automotive-Parts-Store/Leonhardt-KFZ-Teile-867187126691526/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30.849" height="30.849"><path data-name="Icon metro-facebook" d="M25.707 0H5.141A5.141 5.141 0 000 5.142v20.565a5.141 5.141 0 005.141 5.142h10.283V17.352h-3.856v-3.856h3.856v-2.892a4.82 4.82 0 014.82-4.82h4.82V9.64h-4.82a.964.964 0 00-.964.964v2.892h5.3l-.964 3.856H19.28v13.5h6.427a5.141 5.141 0 005.141-5.142V5.142A5.141 5.141 0 0025.707 0z" fill="#fff"/></svg>
+                </a>
+                <a href="https://www.instagram.com/leonhardtkfz/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32.277" height="32.277"><path data-name="Icon simple-instagram" d="M16.138 0c-4.384 0-4.932.02-6.653.1a11.9 11.9 0 00-3.918.75 7.9 7.9 0 00-2.858 1.859A7.874 7.874 0 00.847 5.568 11.865 11.865 0 00.1 9.485c-.084 1.722-.1 2.269-.1 6.653s.02 4.932.1 6.653a11.907 11.907 0 00.75 3.918 7.914 7.914 0 001.861 2.859 7.892 7.892 0 002.857 1.862 11.915 11.915 0 003.918.75c1.721.081 2.269.1 6.653.1s4.932-.02 6.653-.1a11.943 11.943 0 003.918-.75 8.248 8.248 0 004.72-4.72 11.907 11.907 0 00.75-3.918c.081-1.721.1-2.269.1-6.653s-.02-4.932-.1-6.653a11.935 11.935 0 00-.75-3.918 7.921 7.921 0 00-1.861-2.859 7.863 7.863 0 00-2.86-1.862A11.873 11.873 0 0022.791.1C21.07.016 20.523 0 16.138 0zm0 2.9c4.308 0 4.821.022 6.523.1a8.892 8.892 0 013 .558 5.311 5.311 0 013.059 3.063 8.91 8.91 0 01.555 3c.077 1.7.094 2.214.094 6.523s-.02 4.821-.1 6.523a9.082 9.082 0 01-.566 3 5.124 5.124 0 01-1.209 1.859 5.035 5.035 0 01-1.856 1.205 8.976 8.976 0 01-3.006.555c-1.713.077-2.218.094-6.535.094s-4.823-.02-6.535-.1a9.151 9.151 0 01-3.006-.58A5 5 0 014.7 27.495a4.9 4.9 0 01-1.21-1.856 9.159 9.159 0 01-.565-3.006c-.061-1.695-.082-2.218-.082-6.515s.022-4.823.082-6.537a9.148 9.148 0 01.565-3A4.784 4.784 0 014.7 4.719a4.773 4.773 0 011.856-1.208 8.932 8.932 0 012.987-.566c1.715-.061 2.219-.081 6.535-.081l.061.04zm0 4.946a8.287 8.287 0 108.287 8.287 8.287 8.287 0 00-8.287-8.282zm0 13.667a5.379 5.379 0 115.379-5.379 5.378 5.378 0 01-5.379 5.384zM26.69 7.525a1.937 1.937 0 11-1.937-1.935 1.938 1.938 0 011.937 1.935z" fill="#fff"/></svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="<?php echo $this->whatsappno; ?>" class="btn btn--primary--white btn--icon btn--whatsapp"><?php echo $this->whatsapptext; ?></a>
+            
+            <a href="<?php echo $this->serviceno; ?>" class="btn btn--primary--white btn--icon btn--phone"><?php echo $this->servicetext; ?></a>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,14 @@
+::selection {
+    color: $color-grey; background: $color-blue;
+}
+-moz-::selection {
+    color: $color-grey; background: $color-blue;
+}
+
+:root { 
+    --vh: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}

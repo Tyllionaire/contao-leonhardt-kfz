@@ -1,0 +1,63 @@
+.leoFCE {
+    padding: $spacer 0;
+    @include clearfix;
+
+    &.bgColor {
+        margin-top: $spacer * 2;
+    }
+
+    // Different Spacers
+    &--noSpace{ padding: 0 0 0 0 }
+    &--noSpaceBottom { padding: $spacer 0 0 0 }
+    &--noSpaceTop { padding: 0 0 $spacer 0 }
+    
+    &--halfSpace { padding: $spacer/2 0 }
+    &--halfSpaceTop { padding: $spacer/2 0 $spacer 0 }
+    &--halfSpaceBottom { padding: $spacer 0 $spacer/2 0 }
+
+    &--noSpaceTopHalfSpaceBottom { padding: 0 0 $spacer/2 0 }
+    &--noSpaceBottomHalfSpaceTop { padding: $spacer/2 0 0 0 }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+    .leoFCE {
+        padding: $spacer*2 0 $spacer/2 0;
+
+        // Different Spacers
+        &--noSpace{ padding: 0 0 0 0 }
+        &--noSpaceBottom { padding: $spacer*2 0 0 0 }
+        &--noSpaceTop { padding: 0 0 $spacer 0 }
+        
+        &--halfSpace { padding: $spacer/2 0 }
+        &--halfSpaceTop { padding: $spacer/2 0 $spacer 0 }
+        &--halfSpaceBottom { padding: $spacer 0 $spacer/2 0 }
+
+        &--noSpaceTopHalfSpaceBottom { padding: 0 0 $spacer/2 0 }
+        &--noSpaceBottomHalfSpaceTop { padding: $spacer/2 0 0 0 }
+    }
+}
+
+@include media("<tablet") {
+    .fazFCE {
+        padding: $spacer 0 $spacer/2 0;
+
+        &.bgColor {
+            margin-top: $spacer;
+        }
+    
+        // Different Spacers
+        &--noSpace{ padding: 0 0 0 0 }
+        &--noSpaceBottom { padding: $spacer/1 0 0 0 }
+        &--noSpaceTop { padding: 0 0 $spacer/1 0 }
+        
+        &--halfSpace { padding: $spacer/2 0 }
+        &--halfSpaceTop { padding: $spacer/2 0 $spacer/2 0 }
+        &--halfSpaceBottom { padding: $spacer 0 $spacer/2 0 }
+    
+        &--noSpaceTopHalfSpaceBottom { padding: 0 0 $spacer/2 0 }
+        &--noSpaceBottomHalfSpaceTop { padding: $spacer/2 0 0 0 }
+    }
+}

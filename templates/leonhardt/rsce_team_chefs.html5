@@ -1,0 +1,23 @@
+<section class="leoFCE leoFCE_geschaeftsfuehrer<?php if (strlen($this->class) !== 0): ?> <?php echo $this->class; ?><?php endif ?>" <?php echo $this->cssID; ?>>
+
+    <div class="grid-container grid">
+    
+        <?php if ($this->headline): ?>
+            <div class="col-c10 col-push-1">
+                <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+            </div>
+        <?php endif; ?> 
+            
+        <?php foreach ($this->slides as $slide): ?>
+            <div class="col-c4__chefs">
+                <div class="leoFCE_geschaeftsfuehrer_img">
+                    <?php if ($image = $this->arrData['getImageObject']($slide->image, $slide->size)): ?>
+                        <?php $this->insert('picture_default', $image->picture) ?>
+                    <?php endif ?>
+                </div>
+                <?php echo $slide->slideContent ?>
+            </div>
+        <?php endforeach ?>
+
+    </div>
+</section>

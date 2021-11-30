@@ -1,0 +1,41 @@
+.fazFCE__press__detail {
+    position: relative;
+
+    h2 {
+        margin-bottom: 0;
+        .subline.subline__press {
+            font-size: 0.75em;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    .info {
+        font-family: $font-suisse;
+        font-weight: 300;
+        margin: 1em 0 2em 0;
+
+        p { font-family: $font-suisse; }
+    }
+
+    ul.enclosure {
+        list-style-type: none;
+        margin-bottom: $spacer;
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .heroImage__press {
+        width: 100%;
+        margin: 0;
+
+        figcaption {
+            padding: 0 15px;
+        }
+    }
+}

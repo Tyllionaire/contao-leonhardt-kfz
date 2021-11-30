@@ -1,0 +1,71 @@
+<?php
+
+namespace Contao;
+
+if ($GLOBALS['TL_CONFIG']['useRTE']):
+
+// Use document.write() here in case TinyMCE is loaded in a subpalette (see #1424)
+?>
+<script>window.tinymce || document.write('<script src="<?= $this->asset('js/tinymce.min.js', 'contao-components/tinymce4') ?>">\x3C/script>')</script>
+<script>
+window.tinymce && tinymce.init({
+  skin: 'contao',
+  selector: '#<?= $this->selector ?>',
+  language: '<?= Backend::getTinyMceLanguage() ?>',
+  element_format: 'html',
+  document_base_url: '<?= Environment::get('base') ?>',
+  entities: '160,nbsp,60,lt,62,gt,173,shy',
+  branding: false,
+  setup: function(editor) {
+    editor.getElement().removeAttribute('required');
+  },
+  init_instance_callback: function(editor) {
+    if (document.activeElement && document.activeElement.id && document.activeElement.id == editor.id) {
+      editor.editorManager.get(editor.id).focus();
+    }
+    editor.on('focus', function() { Backend.getScrollOffset(); });
+  },
+  file_browser_callback: function(field_name, url, type, win) {
+    Backend.openModalBrowser(field_name, url, type, win, '<?= $this->source ?>');
+  },
+  file_browser_callback_types: <?= json_encode($this->fileBrowserTypes) ?>,
+  paste_as_text: true,
+  content_css: 'system/themes/<?= Backend::getTheme() ?>/tinymce.min.css',
+  //plugins: 'autosave charmap code fullscreen image importcss link lists paste searchreplace stripnbsp tabfocus table visualblocks visualchars',
+  plugins: 'autosave charmap code fullscreen image importcss link lists paste searchreplace stripnbsp tabfocus visualblocks visualchars',
+  browser_spellcheck: true,
+  tabfocus_elements: ':prev,:next',
+  importcss_append: true,
+  extended_valid_elements: 'q[cite|class|title],article,section,hgroup,figure,figcaption[class]',
+  menubar: 'file edit insert view format table',
+  //toolbar: 'link unlink | image | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code'
+  toolbar: 'link unlink | image | formatselect | bold | styleselect | alignleft aligncenter alignright | bullist numlist | code',
+  link_class_list: [
+    {title: 'Keine', value: ''},
+    {title: 'Nicht Unterstrichen', value: 'link__no-textdecoration'},
+    {title: 'Button Primary', value: 'btn btn--primary'},
+    {title: 'Button Secondary', value: 'btn btn--secondary'},
+    {title: 'Button Primary Red', value: 'btn btn--primary--red'},
+    {title: 'Button Secondary Red', value: 'btn btn--secondary--red'},
+    {title: 'Button Primary Grey', value: 'btn btn--primary--grey'},
+    {title: 'Button Primary White', value: 'btn btn--primary--white'},
+    {title: 'Button Back', value: 'btn btn--back'},
+    {title: 'Link Icon Mail', value: 'link__icon link__icon--mail'},
+    {title: 'Link Icon Phone', value: 'link__icon link__icon--phone'}
+  ],
+  importcss_groups: [{title: 'FAZ Stile'}],
+  content_css: ['/files/faz/private/css/tinymce.min.css?' + new Date().getTime()],
+  style_formats_merge: true,
+  style_formats: [
+    {title: 'Leonhardt Styles', items: [
+      { title: 'Subline', inline: 'span', classes: 'subline',  exact: true },
+      { title: 'Fußnote', block: 'p', classes: 'footnote',  exact: true },
+      { title: 'Suisse', inline: 'span', classes: 'font--suisse',  exact: true },
+      { title: 'Small Font', inline: 'span', classes: 'font--small',  exact: true },
+      { title: 'BU', block: 'p', classes: 'figcaption',  exact: true }
+    ]}    
+  ],
+  importcss_selector_filter:'.my-prefix-',
+});
+</script>
+<?php endif; ?>

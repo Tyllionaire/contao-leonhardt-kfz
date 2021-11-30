@@ -1,0 +1,96 @@
+.fazFCE__press__short {
+    position: relative;
+
+    a { text-decoration: none; }
+
+    > div > div > div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__block + &__block {
+        margin-top: 1rem;
+    }
+    &__img {
+        flex: 1 1 35%;
+
+        .image_container {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        figcaption {
+            @extend .invisible;
+        }
+    }
+    &__content {
+        flex: 1 1 65%;
+        
+        padding: 1rem 2rem;
+        background-color: $color-white;
+
+        .info {
+            font-family: $font-suisse;
+            font-weight: 300;
+            margin-bottom: 1em;
+        }
+        .ce_text > * {
+            margin: 0;
+            display: inline;
+        }
+        .more {
+            display: inline;
+            font-family: $font-suisse;
+            font-weight: 500;
+            text-decoration: none;
+            color: $color-blue;
+            margin: 0 0 0 0.5em;
+
+            &::before {
+                content: '―';
+                position: relative;
+                margin: 0 0.5em 0 0;
+            }
+            // Arrow
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 0.3em;
+                height: 0.3em;
+                border-width: 0 2px 2px 0;
+                border-color: $color-blue;
+                border-style: solid;
+                margin: 0 0 0.175em 0.15em;
+                transform: translateX(0) rotate(-45deg);
+                transition: all 0.2s ease-in-out;
+            }
+
+            &:hover {
+                color: $color-red;
+                &::after {
+                    transform: translateX(0.5em) rotate(-45deg);
+                    border-color: $color-red;
+                }
+            }
+        }
+    }
+    
+    @include media("<desktop-xl") {
+    }
+    
+    @include media("<desktop") {
+        .fazFCE__press__short__img,
+        .fazFCE__press__short__content {
+            flex: 1 1 50%;
+        }
+    }
+    
+    @include media("<tablet") {
+        > div > div > div {
+            display: block;
+        }
+    }
+}

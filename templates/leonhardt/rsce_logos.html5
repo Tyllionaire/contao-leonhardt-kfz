@@ -1,0 +1,37 @@
+<section class="leoFCE history-slider<?php if (strlen($this->class) !== 0): ?> <?php echo $this->class; ?><?php endif ?>" <?php echo $this->cssID; ?>>
+
+    
+    <?php if ($this->headline): ?>
+        <div class="col-c6-headline">
+            <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+        </div>
+    <?php endif; ?> 
+
+    <div class="grid-container grid">
+        <div class="col-c12-swiper">
+            <!-- Slider main container -->
+            <div class="swiper-container swiper-logos">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <?php foreach ($this->slides as $slide): ?>
+                        <div class="swiper-slide">
+                            <?php if ($image = $this->arrData['getImageObject']($slide->image, $slide->size)): ?>
+                            <a href="<?php echo $slide->link ?>" target="_blank" rel="nofollow">
+                                <?php $this->insert('picture_default', $image->picture) ?>
+                            </a>
+                            <?php endif ?>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination pag-logos"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev btn-prev-logos"></div>
+                <div class="swiper-button-next btn-next-logos"></div>
+            </div>
+        </div>
+
+    </div>
+</section>

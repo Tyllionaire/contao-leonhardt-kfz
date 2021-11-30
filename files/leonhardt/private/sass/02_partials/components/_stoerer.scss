@@ -1,0 +1,83 @@
+.stoerer {
+    display: block;
+    position: absolute;
+    padding: 1rem 1rem 3rem 1rem;
+
+    font-family: $font-suisse;
+    // font-weight: 700;
+
+    max-width: 420px;
+    bottom: 22px;
+
+    & > * {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    &::after {
+        position: absolute;
+        width: 70px;
+        display: block;
+        bottom: -44px;
+        height: 44px;
+    }
+
+    // Options
+    &--blue--left {
+        color: $color-white;
+        background-color: $color-blue;
+
+        &::after { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29.2 14.6'%3E%3Cpath d='M0,0V14.6H13.1v-.2C14.1,2.9,16.4,0,29.2,0Z' fill='%23110a35'/%3E%3C/svg%3E"); left: 0 }
+    }
+    &--blue--right {
+        color: $color-white;
+        background-color: $color-blue;
+
+        &::after { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29.2 14.6'%3E%3Cpath d='M0,0C12.8,0,15.1,2.9,16.1,14.4v.2H29.2V0Z' transform='translate(0 0)' fill='%23110a35'/%3E%3C/svg%3E%0A"); right: 0 }
+    }
+    &--red--left {
+        color: $color-white;
+        background-color: $color-red;
+
+        &::after { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29.2 14.6'%3E%3Cpath d='M0,0V14.6H13.1v-.2C14.1,2.9,16.4,0,29.2,0Z' fill='%23E61849'/%3E%3C/svg%3E"); left: 0 }
+    }
+    &--red--right {
+        color: $color-white;
+        background-color: $color-red;
+
+        &::after { content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29.2 14.6'%3E%3Cpath d='M0,0C12.8,0,15.1,2.9,16.1,14.4v.2H29.2V0Z' transform='translate(0 0)' fill='%23E61849'/%3E%3C/svg%3E%0A"); right: 0 }
+    }
+
+    &--align-right {
+        right: 0;
+    }
+
+    @include media("<desktop-xl") {
+        max-width: 320px;
+        left: -6%;
+
+        & > * {
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+        
+        &--align-right { left: auto }
+    }
+
+    @include media("<desktop") {
+    }
+
+    @include media("<phone-ls") {
+        max-width: fit-content;
+        position: relative;
+        margin: -2rem 0 2rem 0;
+        left: 0;
+
+        & > * {
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+
+        &--align-right { float: right }
+    }
+}

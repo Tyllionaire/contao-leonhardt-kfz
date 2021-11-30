@@ -1,0 +1,45 @@
+// Responsive Breakpoints
+$breakpoints: (phone: 360px, phone-ls: 480px, tablet-s: 640px, tablet: 768px, desktop: 1024px, desktop-m: 1200px, desktop-xl: 1400px);
+
+// Fonts
+$font-inter:       'Inter';
+$font-sangbleu:    'SangBleuKingdom';
+$font-suisse:      'SuisseIntl';
+
+// Colors
+$color-main:    #822f8e;
+$color-main:    #5F4B8B;
+$color-blue:    #110A35;
+$color-grey:    #E8EDEE;
+$color-red:     #E61849;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-grey:  #ebebeb;
+
+$color-red-dark:    #BF0A35;
+$color-blue-light:  #E8EDEE;
+$color-blue-transparent:  #CECDD5;
+$color-grey-dark:   #3D4B57;
+
+// Spacers
+$spacer: 3.75rem;
+
+// Z-Index handling
+$z-index: (
+    modal               : 200,
+    navigation          : 100,
+    m-navigation        : 99,
+    footer              : 90,
+    intro               : 10,
+    zero                : 0,
+    minus                : -1
+);
+
+@function z-index($key) {
+    @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+    z-index: z-index($key);
+}

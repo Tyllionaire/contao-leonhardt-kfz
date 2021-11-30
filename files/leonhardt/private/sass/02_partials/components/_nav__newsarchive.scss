@@ -1,0 +1,66 @@
+.mod_newsmenu  {
+    position: relative;
+    font-family: $font-suisse;
+    line-height: 225%;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        overflow-x: auto;
+        display: flex;
+
+        li {
+            display: inline-block;
+            margin: 0 0 0 1rem;
+            overflow: visible;
+            min-width: 120px;
+
+            
+            &:first-child {
+                margin: 0;
+            }
+
+            & > * {
+                overflow: visible;
+                position: relative;
+                width: 100%;
+                padding: 0.5rem 1rem 0.25rem 1rem;
+                text-align: center;
+            }
+
+        }
+    }
+
+    &__amount {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        //min-width: 1.5rem;
+        //height: 1.25rem;
+        width: 2em;
+        height: 2em;
+        margin-left: 0.75em;
+        top: -1px;
+        border-radius: 50%;
+        background: $color-blue;
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: 1;
+        color: $color-grey;
+
+        &.active {
+            border: 2px solid $color-grey;
+        }
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+}

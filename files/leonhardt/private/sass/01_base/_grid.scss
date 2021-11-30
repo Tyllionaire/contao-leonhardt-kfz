@@ -1,0 +1,289 @@
+$visualColor: rgba(0, 255, 255, 0);
+
+$custom-neat-grid-mobile: (
+    columns: 6,
+    gutter: 12px,
+    media: "screen and (max-width: 479px)"
+);
+
+$custom-neat-grid-tablet-portrait: (
+    columns: 12,
+    gutter: 20px,
+    media: "screen and (min-width : 480px) and (max-width : 768px)"
+);
+
+$custom-neat-grid-tablet: (
+    columns: 12,
+    gutter: 20px,
+    media: "screen and (min-width : 769px) and (max-width : 1023px)"
+);
+
+$custom-neat-grid-desktop: (
+    columns: 12,
+    gutter: 20px,
+    media: 1024px
+);
+
+.grid-container {
+    position: relative;
+    max-width: 1364px;
+    margin: 0 auto;
+
+    &--xxl {
+        max-width: 1448px;
+    }
+}
+
+.grid {
+    position: relative;
+    @include grid-container;
+    
+    @include grid-visual($visualColor, $custom-neat-grid-mobile);
+
+    @include grid-media($custom-neat-grid-tablet-portrait) {
+        @include grid-visual($visualColor, $custom-neat-grid-tablet-portrait);
+    }
+
+    @include grid-media($custom-neat-grid-tablet) {
+        @include grid-visual($visualColor, $custom-neat-grid-tablet);
+    }
+
+    @include grid-media($custom-neat-grid-desktop) {
+        @include grid-visual($visualColor, $custom-neat-grid-desktop);
+    }
+}
+
+// Mixin to set columns for grid
+@mixin columnGrid($phone, $tablet-portrait, $tablet, $desktop) {
+    @include grid-column($phone, $custom-neat-grid-mobile); //phone
+
+    @include grid-media($custom-neat-grid-tablet-portrait) {
+        //tablet-portrait
+        @include grid-column($tablet-portrait);
+    }
+
+    @include grid-media($custom-neat-grid-tablet) {
+        //tablet
+        @include grid-column($tablet);
+    }
+
+    @include grid-media($custom-neat-grid-desktop) {
+        //desktop
+        @include grid-column($desktop);
+    }
+}
+
+// Mixin to set offset
+@mixin push($phone, $tablet-ls, $tablet, $desktop) {
+    @include grid-push($phone, $custom-neat-grid-mobile); //phone
+
+    @include grid-media($custom-neat-grid-tablet-portrait) {
+        //tablet-portrait
+        @include grid-push($tablet-ls, $custom-neat-grid-tablet-portrait);
+    }
+
+    @include grid-media($custom-neat-grid-tablet) {
+        //tablet
+        @include grid-push($tablet, $custom-neat-grid-tablet);
+    }
+
+    @include grid-media($custom-neat-grid-desktop) {
+        //desktop
+        @include grid-push($desktop, $custom-neat-grid-desktop);
+    }
+}
+
+// Mixin to shift columns
+@mixin shift($phone, $tablet-ls, $tablet, $desktop) {
+    @include grid-shift($phone, $custom-neat-grid-mobile); //phone
+
+    @include grid-media($custom-neat-grid-tablet-portrait) {
+        //tablet-portrait
+        @include grid-shift($tablet-ls, $custom-neat-grid-tablet-portrait);
+    }
+
+    @include grid-media($custom-neat-grid-tablet) {
+        //tablet
+        @include grid-shift($tablet, $custom-neat-grid-tablet);
+    }
+
+    @include grid-media($custom-neat-grid-desktop) {
+        //desktop
+        @include grid-shift($desktop, $custom-neat-grid-desktop);
+    }
+}
+
+
+div[class^="col-"],
+div[class*="col-"] {
+    position: relative;
+}
+
+.col-c1 {
+    @include columnGrid(3, 2, 2, 1);
+}
+
+.col-c2 {
+    @include columnGrid(6, 2, 2, 2);
+}
+
+.col-c3 {
+    @include columnGrid(6, 6, 3, 3);
+}
+
+.col-c4 {
+    @include columnGrid(6, 4, 4, 4);
+    
+    &__chefs {
+        @include columnGrid(6, 6, 4, 4)
+
+        & + .col-c4__chefs {
+            @include media("<phone-ls") {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+.col-c5 {
+    @include columnGrid(6, 5, 5, 5);
+}
+
+.col-c6 {
+    @include columnGrid(6, 8, 6, 6);
+    
+    &-headline {
+        @include columnGrid(4, 8, 4, 4);
+        margin: 0 0 2em 0 !important;
+    }
+}
+
+.col-c7 {
+    @include columnGrid(6, 7, 7, 7);
+}
+
+.col-c8 {
+    @include columnGrid(6, 8, 8, 8);
+}
+
+.col-c9 {
+    @include columnGrid(6, 9, 9, 9);
+}
+
+.col-c10 {
+    @include columnGrid(6, 10, 10, 10);
+}
+
+.col-c11 {
+    @include columnGrid(6, 11, 11, 11);
+}
+
+.col-c12 {
+    @include columnGrid(6, 12, 12, 12);
+    
+    &-swiper {
+        @include columnGrid(6, 12, 12, 12);
+        @include media("<tablet", "<=desktop") {
+            width: 100%;
+            margin: 0;
+            padding: 0 0 0 0;
+        }
+    }
+}
+
+
+// Push Columns
+.col-push-1 {
+    @include push(0, 1, 1, 1);
+}
+
+.col-push-2 {
+    @include push(0, 2, 2, 2);
+}
+
+.col-push-3 {
+    @include push(0, 2, 3, 3);
+}
+
+.col-push-4 {
+    @include push(0, 4, 4, 4);
+}
+
+.col-push-5 {
+    @include push(0, 5, 5, 5);
+}
+
+.col-push-6 {
+    @include push(0, 6, 6, 6);
+}
+
+.col-push-7 {
+    @include push(0, 7, 7, 7);
+}
+
+.col-push-8 {
+    @include push(0, 8, 8, 8);
+}
+
+// Shift Columns
+.col-shift-1-pos {
+    @include shift(0, 1, 1, 1);
+}
+
+.col-shift-1-neg {
+    @include shift(0, -1, -1, -1);
+}
+
+.col-shift-2-pos {
+    @include shift(0, 2, 2, 2);
+}
+
+.col-shift-2-neg {
+    @include shift(0, -2, -2, -2);
+}
+
+.col-shift-3-pos {
+    @include shift(0, 3, 3, 3);
+}
+
+.col-shift-3-neg {
+    @include shift(0, -3, -3, -3);
+}
+
+.col-shift-4-pos {
+    @include shift(0, 4, 4, 4);
+}
+
+.col-shift-4-neg {
+    @include shift(0, -4, -4, -4);
+}
+
+.col-shift-5-pos {
+    @include shift(0, 5, 5, 5);
+}
+
+.col-shift-5-neg {
+    @include shift(0, -5, -5, -5);
+}
+
+.col-shift-6-pos {
+    @include shift(0, 6, 6, 6);
+}
+
+.col-shift-6-neg {
+    @include shift(0, -6, -6, -6);
+}
+
+// Formular für Buergergespräche
+.col-form-c2 {
+    @include columnGrid(6, 3, 2, 2);
+}
+.col-form-c4 {
+    @include columnGrid(6, 5, 4, 4);
+}
+.col-form-c6 {
+    @include columnGrid(6, 8, 6, 6);
+}
+.col-form-push-3 {
+    @include push(0, 2, 3, 3);
+}

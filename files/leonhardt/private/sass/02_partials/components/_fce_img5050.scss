@@ -1,0 +1,29 @@
+.fazFCE__img--5050 {
+    overflow: hidden;
+
+    .img--5050 {
+        display: flex;
+
+        & > * {
+            flex: 1;
+        }
+    }
+}
+
+@include media("<desktop-xl") {
+}
+
+@include media("<desktop") {
+}
+
+@include media("<phone-ls") {
+    .fazFCE__img--5050 {    
+        .img--5050 {
+            display: block;
+            
+            & > * {
+                flex: auto;
+            }
+        }
+    }
+}

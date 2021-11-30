@@ -1,0 +1,47 @@
+.mod_socialLinks {
+    .social__items {
+        li {
+            display: inline-block;
+
+            & + li {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .social__item {
+        display: block;
+        width: 28px;
+        height: 28px;
+
+        &--facebook {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cg data-name='Gruppe 160'%3E%3Cpath data-name='Pfad 249' d='M15.211 9.932V7.047a1.443 1.443 0 011.442-1.442h1.442V2h-2.884a4.326 4.326 0 00-4.326 4.326v3.606H8v3.605h2.884v11.537h4.326V13.537h2.884l1.442-3.605z' fill='%23fff'/%3E%3C/g%3E%3Cpath data-name='Rechteck 327' fill='none' d='M0 0h28v28H0z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &--twitter {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cpath data-name='Pfad 387' d='M25.552 6.601a9.885 9.885 0 01-2.732.749 4.714 4.714 0 002.086-2.621A9.475 9.475 0 0121.9 5.877a4.741 4.741 0 00-8.2 3.242 4.882 4.882 0 00.11 1.081 13.42 13.42 0 01-9.774-4.959 4.742 4.742 0 001.457 6.336 4.682 4.682 0 01-2.142-.584v.052a4.763 4.763 0 003.8 4.659 4.732 4.732 0 01-1.243.156 4.192 4.192 0 01-.9-.081 4.786 4.786 0 004.43 3.3 9.526 9.526 0 01-5.878 2.022 8.879 8.879 0 01-1.134-.061 13.347 13.347 0 007.273 2.127 13.4 13.4 0 0013.494-13.49c0-.21-.007-.412-.017-.613a9.458 9.458 0 002.376-2.463z' fill='%23fff'/%3E%3Cpath data-name='Rechteck 328' fill='none' d='M0 0h28v28H0z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &--instagram {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cg data-name='instagram (2)' fill='%23fff'%3E%3Cpath data-name='Pfad 388' d='M21.763 3.021H6.238a3.22 3.22 0 00-3.217 3.217v15.525a3.22 3.22 0 003.217 3.217h15.525a3.22 3.22 0 003.217-3.217V6.238a3.22 3.22 0 00-3.217-3.217zm-7.72 16.726a5.79 5.79 0 115.79-5.79 5.8 5.8 0 01-5.79 5.79zm6.433-10.293a1.93 1.93 0 111.93-1.93 1.932 1.932 0 01-1.93 1.93zm0 0'/%3E%3Cpath data-name='Pfad 389' d='M20.422 6.849a.73.73 0 10.73.73.73.73 0 00-.73-.73zm0 0'/%3E%3Cpath data-name='Pfad 390' d='M14.039 10.298a3.662 3.662 0 103.662 3.662 3.667 3.667 0 00-3.662-3.662zm0 0'/%3E%3C/g%3E%3Cpath data-name='Rechteck 330' fill='none' d='M0 0h28v28H0z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &--linkedin {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cg fill='%23fff'%3E%3Cpath data-name='Pfad 244' d='M24.727 24.732h.005v-7.873c0-3.851-.829-6.818-5.331-6.818a4.674 4.674 0 00-4.21 2.314h-.063v-1.954H10.86v14.33h4.445v-7.1c0-1.868.354-3.675 2.668-3.675 2.28 0 2.314 2.132 2.314 3.795v6.977z'/%3E%3Cpath data-name='Pfad 245' d='M3.626 10.402h4.45v14.331h-4.45z'/%3E%3Cpath data-name='Pfad 246' d='M5.846 3.267a2.59 2.59 0 102.577 2.578 2.578 2.578 0 00-2.577-2.578z'/%3E%3C/g%3E%3Cpath data-name='Rechteck 326' fill='none' d='M0 0h28v28H0z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &--xing {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cg fill='%23fff'%3E%3Cpath data-name='Pfad 247' d='M24.246 3.846h-4.861L12.17 16.485l4.649 8.151h4.857l-4.649-8.151z'/%3E%3Cpath data-name='Pfad 248' d='M10.164 7.744H5.585l2.649 4.666-3.479 5.729h4.579l3.48-5.729z'/%3E%3C/g%3E%3Cpath data-name='Rechteck 329' fill='none' d='M0 0h28v28H0z'/%3E%3C/svg%3E");
+            }
+        }
+    }
+}
