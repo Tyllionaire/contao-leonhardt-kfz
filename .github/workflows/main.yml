@@ -14,4 +14,4 @@ jobs:
         server: 37.202.4.22
         username: p348245f1
         password: ${{ secrets.PASSWORDLEO }}
-        server-dir: /contao
+        server-dir: /contao/
