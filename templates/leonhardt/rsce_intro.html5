@@ -2,7 +2,7 @@
 
     <?php if ($media = $this->getImageObject($this->media)): ?>
         <div class="leoFCE_intro__video-wrapper">
-            <video class="leoFCE_intro__hero-video" autoplay muted loop>
+            <video class="leoFCE_intro__hero-video" autoplay muted loop playsinline>
                 <source type="video/mp4" src="<?php echo $this->getImageObject($this->media)->src ?>">
             </video>
         </div>
