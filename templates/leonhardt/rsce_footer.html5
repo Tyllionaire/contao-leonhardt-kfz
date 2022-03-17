@@ -33,6 +33,9 @@
             <a href="<?php echo $this->whatsappno; ?>" class="btn btn--primary--white btn--icon btn--whatsapp"><?php echo $this->whatsapptext; ?></a>
             
             <a href="<?php echo $this->serviceno; ?>" class="btn btn--primary--white btn--icon btn--phone"><?php echo $this->servicetext; ?></a>
+        
+            <h3 style="margin-top: 2em;">Wir sind GLS Servicepartner</h3>
+            <a href="https://gls-group.eu/DE/de/home" target="_blank" class="gls-logo"></a>
         </div>
     </div>
     
